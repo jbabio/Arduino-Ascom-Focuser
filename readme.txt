@@ -1,6 +1,8 @@
-AAF2 Release 2.5.0
+AAF2JB Release 1.0.0
 ======================
-This requires the Ascom platform 6.1 to be installed first from the Ascom website (http://ascom-standards.org/)
+This project is a derivative fromhttps://sourceforge.net/projects/arduinoascomfocuser/?source=navbar 
+
+It requires the Ascom platform 6.1 to be installed first from the Ascom website (http://ascom-standards.org/)
 
 The 3 project components are:
 
@@ -14,7 +16,7 @@ It will install:
 
 Note: If you have a previous version of AAF2 installed then uninstall it first before installing the latest version.
 
-2) An Arduino sketch (AAF2.ino)
+2) An Arduino sketch (AAF2JB.ino)
 - This needs to be uploaded to the Arduino in your focuser.
 
 3) Two Arduino Libraries that support the 1-wire and Temperature Sensor functions used by the sketch. 
@@ -33,6 +35,14 @@ See the Wiki section of this project for detailed build instructions.
 
 I have only tested the Ascom Driver on Windows 7 32-bit and 64-bit systems but it should work fine on any Windows version with the correct
 ASCOM Platform installed. If you have any comments or suggestions please feed them back via the SourceForge project pages.
+
+Changes in Version JB 1.0.0
+---------------------------
+Changed name and version number to avoid confusion with original AAF2. Name will be AAF2JB and version starts at 1.0.0
+Removed the #define BLUETOOTH_COMMS method to activate BT since that "harcoded" method makes imposible to activate and deactivate the BT radio without editing the code and reuploading it to the board.
+Two buttons added (Pins 11 & 12). One to allow turning BT on/off and the other to perform BT configuration.
+Functions were moved to different tabs depending on their purpose.
+Multiple code modifications.
 
 Changes in Version 2.5.0
 ------------------------
