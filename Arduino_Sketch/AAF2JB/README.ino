@@ -29,6 +29,12 @@
 //                         Some general code and structure tidying
 // 2.5.0       24/06/2015  Changes to integrate Bluetooth Comms using HC05.
 //                         Some refactoring, renaming, rearranging of code
+// 1.0.0JB     20/10/2016  Changed name and version number to avoid confusion with original AAF2.
+//                         Name will be AAF2JB and version starts at 1.0.0JB
+//                         Removed the #define BLUETOOTH_COMMS method to activate BT since makes imposible to activate and deactivate the BT radio without editing the code.
+//                         Two buttons added (Pins 11 & 12). One to allow turning BT on/off and the other to perform BT configuration.
+//                         Functions were moved to different tabs depending on their purpose.
+//                         Multiple code modifications.
 //----------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------

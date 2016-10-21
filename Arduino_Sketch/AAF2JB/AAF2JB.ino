@@ -52,8 +52,8 @@
 //----------------------------------------------------------------------------------------------------------------------
 
 const String programName = "Arduino Focuser";
-const String programVersion = "2.5.0";
-const String BT_NAME = "AAF2";                             // Bluetooth Device Name
+const String programVersion = "1.0.0";
+const String BT_NAME = "AAF2JB";                           // Bluetooth Device Name
 const String BT_PWD  = "0000";                             // Bluetooth Device Password (Pairing Code)
 
 const int motorPins[4] = MOTOR_PINS;                       // Declare pins to drive motor control board
