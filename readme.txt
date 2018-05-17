@@ -39,99 +39,102 @@ ASCOM Platform installed. If you have any comments or suggestions please feed th
 HARDWARE
 --------
 
-------------------------								|	-----------------------------
-jD-IOBoard V1.0 pinouts 								|	BME280 Sensor       ->  Board
-------------------------								|	-----------------------------
-(IMPORTANT, NEWER JD_IOBoard REVISION CHANGED PINOUT)	|	Vin (Voltage In)    ->  3.3V/5V
-														|	Gnd (Ground)        ->  Gnd
-            D D D G       R T R							|	SDA (Serial Data)   ->  A4
-        5 5 1 1 1 N D D D X X S							|	SCK (Serial Clock)  ->  A5
-        V V 3 1 2 D 7 6 5 1 1 T							|	
-        | | | | | | | | | | | |							|	-----------------------------
-     +----------------------------+						|	SSD1306 OLED Screen ->  Board
-     |O O O O O O O O O O O O O   |						|	-----------------------------
-O1 - |O O   S M M                O| _ DTS 				|	Vin (Voltage In)    ->  3.3V/5V
-O2 - |O O   C O I                O| - RX  F				|	Gnd (Ground)        ->  Gnd
-O3 - |O O   K S S       S S      O| - TX  T				|	SDA (Serial Data)   ->  A4
-O4 - |O O     I O       D C      O| - 5V  D				|	SCK (Serial Clock)  ->  A5
-O5 - |O O               A L      O| _ CTS I				|	
-O6 - |O O O O O O O O   O O O O  O| - GND				|	-----------------------------
-     +----------------------------+						|	XDeSIG Keypad	 	->  Board
-      |   | | | | | |   | | | |							|	-----------------------------
-      C   G 5 A A A A   A A 5 G							|	Vin (Voltage In)    ->  3.3V/5V
-      O   N V 0 1 2 3   4 5 V N							|	Signal (v. divider) ->  A3
-      M   D                   D							|	Gnd (Ground)        ->  Gnd
-														|	
+------------------------                              | -----------------------------
+jD-IOBoard V1.0 pinouts                               | BME280 Sensor       ->  Board
+------------------------                              | -----------------------------
+(IMPORTANT, NEWER JD_IOBoard REVISION CHANGED PINOUT) | Vin (Voltage In)    ->  3.3V/5V
+                                                      | Gnd (Ground)        ->  Gnd
+            D D D G       R T R                       | SDA (Serial Data)   ->  A4
+        5 5 1 1 1 N D D D X X S                       | SCK (Serial Clock)  ->  A5
+        V V 3 1 2 D 7 6 5 1 1 T                       | 
+        | | | | | | | | | | | |                       | -----------------------------
+     +----------------------------+                   | SSD1306 OLED Screen ->  Board
+     |O O O O O O O O O O O O O   |                   | -----------------------------
+O1 - |O O   S M M                O| _ DTS             | Vin (Voltage In)    ->  3.3V/5V
+O2 - |O O   C O I                O| - RX  F           | Gnd (Ground)        ->  Gnd
+O3 - |O O   K S S       S S      O| - TX  T           | SDA (Serial Data)   ->  A4
+O4 - |O O     I O       D C      O| - 5V  D           | SCK (Serial Clock)  ->  A5
+O5 - |O O               A L      O| _ CTS I           | 
+O6 - |O O O O O O O O   O O O O  O| - GND             | -----------------------------
+     +----------------------------+                   | XDeSIG Keypad   ->  Board
+      |   | | | | | |   | | | |                       | -----------------------------
+      C   G 5 A A A A   A A 5 G                       | Vin (Voltage In)    ->  3.3V/5V
+      O   N V 0 1 2 3   4 5 V N                       | Signal (v. divider) ->  A3
+      M   D                   D                       | Gnd (Ground)        ->  Gnd
 	  
 
 Changes in Version JB 1.0.6   15/05/2018  
 ----------------------------------------
-  Dropped U8glib, U8g2 from the same author will be used onwards. U8g2 uses
-                      the standard Wire.h library thus allowing the use of the BME280 i2c sensor.
-                      Repository: https://github.com/olikraus/u8g2
-                      Reference:  https://github.com/olikraus/u8g2/wiki/u8g2reference
+Dropped U8glib, U8g2 from the same author will be used onwards. U8g2 usesthe standard Wire.h library thus allowing
+the use of the BME280 i2c sensor.
 
-                      Since fonts can use huge amounts of program memory, the small footprint font
-                      u8g2_font_freedoomr10_tu (658 Bytes) was selected.
-                      This means that only uppercase letters, numbers and basic mathematic
-                      simbols are available.
+	Repository: https://github.com/olikraus/u8g2
+	Reference:  https://github.com/olikraus/u8g2/wiki/u8g2reference
+
+Since fonts can use huge amounts of program memory, the small footprint fontu8g2_font_freedoomr10_tu (658 Bytes)
+was selected. This means that only uppercase letters, numbers and basic mathematic simbols are available.
                       
-                      BME280 is now suppoted as ambient sensor via BME280 Library from Finitespace, 
-                      this sensor can sense temperature, humidity and atmosferic pressure.
-                      Repository: https://github.com/finitespace/BME280
+BME280 is now suppoted as ambient sensor via BME280 Library from Finitespace, this sensor can sense temperature,
+humidity and atmosferic pressure.
 
-                      To save screen space, the manual step size is now shown in roman numbers.
-                      1 -> I | 10 -> X | 100 -> C | 1000 -> M
+	Repository: https://github.com/finitespace/BME280
 
-                      Removed a delay() on getAmbientData(), it was there for debug purposes.
+To save screen space, the manual step size is now shown in roman numbers: 1 -> I | 10 -> X | 100 -> C | 1000 -> M
 
-                      Display layout revamped.
+Removed a delay() on getAmbientData(), it was there for debug purposes.
+
+Display layout revamped.
                       
-                      Known issue: Currently, the ascom driver won't be able to handle new ambient data, so that information
-                      will be shown on screen only. 
+Known issue: Currently, the ascom driver won't be able to handle new ambient data, so that information
+will be shown on screen only. 
 
 Changes in Version JB 1.0.5   22/04/2018 
 ----------------------------------------
-  Center button turns on/off the screen.
-                      Manual step size shown on screem.
+Center button turns on/off the screen.
+
+Manual step size shown on screem.
 
 Changes in Version JB 1.0.4   20/04/2018 
 ----------------------------------------
-  Added 128x64 OLED display output through i2c with U8glib library.
-                      Repository: https://github.com/olikraus/u8glib
-                      Reference:  https://github.com/olikraus/u8glib/wiki/userreference
+Added 128x64 OLED display output through i2c with U8glib library.
+
+	Repository: https://github.com/olikraus/u8glib
+	Reference:  https://github.com/olikraus/u8glib/wiki/userreference
                       
-                      Added a voltage divider based keypad with 5 keys which uses only 
-                      one analog pin by XDeSIG.
-                      https://www.pcbway.com/project/shareproject/W50475ASN5_Escorna_bot_2_1_Gerber.html
+Added a voltage divider based keypad with 5 keys which uses only one analog pin by XDeSIG.
                       
-                      Known issue: Currently, the ascom driver can't be notified automatically
-                      of manual position changes, to override this and sync the ascom client
-                      with the focuser, you'll have to press halt/stop buton wich triggers a 
-                      resync to current position. 
+	https://www.pcbway.com/project/shareproject/W50475ASN5_Escorna_bot_2_1_Gerber.html
+                      
+Known issue: Currently, the ascom driver can't be notified automatically of manual position changes, to override 
+this and sync the ascom client with the focuser, you'll have to press halt/stop buton wich triggers a resync to
+current position. 
 
 Changes in Version JB 1.0.3   17/04/2018
 ----------------------------------------
-  Modified Clockwise(), AntiClockwise() and related functions 
-                      to be non blocking.
+Modified Clockwise(), AntiClockwise() and related functions to be non blocking.
 
 Changes in Version JB 1.0.2   16/04/2018  
 ----------------------------------------
-  Replaced all #define with const
+Replaced all #define with const
 
 Changes in Version JB 1.0.1   15/04/2018  
 ----------------------------------------
-  Switched from multiple board system (arduino Nano+HC05+ULN2003)to 
-                      a JD_IOBoard V1.0 which include an Atmega+ULN2003 in the size of an 
-                      Arduino pro mini.
-                      Droped BT functionality and its buttons. 
+Switched from multiple board system (arduino Nano+HC05+ULN2003)to a JD_IOBoard V1.0 which include an Atmega+ULN2003
+in the size of an Arduino pro mini.
+
+Droped BT functionality and its buttons. 
 
 Changes in Version JB 1.0.0   20/10/2016
 ----------------------------------------
 Changed name and version number to avoid confusion with original AAF2. Name will be AAF2JB and version starts at 1.0.0
-Removed the #define BLUETOOTH_COMMS method to activate BT since that "harcoded" method makes imposible to activate and deactivate the BT radio without editing the code and reuploading it to the board.
+
+Removed the #define BLUETOOTH_COMMS method to activate BT since that "harcoded" method makes imposible to activate and 
+deactivate the BT radio without editing the code and reuploading it to the board.
+
 Two buttons added (Pins 11 & 12). One to allow turning BT on/off and the other to perform BT configuration.
+
 Functions were moved to different tabs depending on their purpose.
+
 Multiple code modifications.
 
 **FORK**FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK****FORK**
