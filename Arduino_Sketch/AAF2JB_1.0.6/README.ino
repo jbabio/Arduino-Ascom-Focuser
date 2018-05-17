@@ -95,47 +95,28 @@ Thanks for code snippets & inspiration:
                       will be shown on screen only. 
                         
                                              
-------------------------
-jD-IOBoard V1.0 pinouts
-------------------------
-
-            D D D G       R T R
-        5 5 1 1 1 N D D D X X S
-        V V 3 1 2 D 7 6 5 1 1 T
-        | | | | | | | | | | | |
-     +----------------------------+
-     |O O O O O O O O O O O O O   |
-O1 - |O O   S M M                O| _ DTS 
-O2 - |O O   C O I                O| - RX  F
-O3 - |O O   K S S       S S      O| - TX  T
-O4 - |O O     I O       D C      O| - 5V  D
-O5 - |O O               A L      O| _ CTS I
-O6 - |O O O O O O O O   O O O O  O| - GND
-     +----------------------------+
-      |   | | | | | |   | | | |
-      C   G 5 A A A A   A A 5 G
-      O   N V 0 1 2 3   4 5 V N
-      M   D                   D
-
---------------------
-BME280  i2c  pinout
---------------------
-Sensor              ->  Board
------------------------------
-Vin (Voltage In)    ->  3.3V/5V
-Gnd (Ground)        ->  Gnd
-SDA (Serial Data)   ->  A4
-SCK (Serial Clock)  ->  A5
-
--------------------
-SSD1306 i2c pinout
--------------------
-OLED Screen         ->  Board
------------------------------
-Vin (Voltage In)    ->  3.3V/5V
-Gnd (Ground)        ->  Gnd
-SDA (Serial Data)   ->  A4
-SCK (Serial Clock)  ->  A5
+------------------------                              | -----------------------------
+jD-IOBoard V1.0 pinouts                               | BME280 Sensor       ->  Board
+------------------------                              | -----------------------------
+(IMPORTANT, NEWER JD_IOBoard REVISION CHANGED PINOUT) | Vin (Voltage In)    ->  3.3V/5V
+                                                      | Gnd (Ground)        ->  Gnd
+            D D D G       R T R                       | SDA (Serial Data)   ->  A4
+        5 5 1 1 1 N D D D X X S                       | SCK (Serial Clock)  ->  A5
+        V V 3 1 2 D 7 6 5 1 1 T                       | 
+        | | | | | | | | | | | |                       | -----------------------------
+     +----------------------------+                   | SSD1306 OLED Screen ->  Board
+     |O O O O O O O O O O O O O   |                   | -----------------------------
+O1 - |O O   S M M                O| _ DTS             | Vin (Voltage In)    ->  3.3V/5V
+O2 - |O O   C O I                O| - RX  F           | Gnd (Ground)        ->  Gnd
+O3 - |O O   K S S       S S      O| - TX  T           | SDA (Serial Data)   ->  A4
+O4 - |O O     I O       D C      O| - 5V  D           | SCK (Serial Clock)  ->  A5
+O5 - |O O               A L      O| _ CTS I           | 
+O6 - |O O O O O O O O   O O O O  O| - GND             | -----------------------------
+     +----------------------------+                   | XDeSIG Keypad   ->  Board
+      |   | | | | | |   | | | |                       | -----------------------------
+      C   G 5 A A A A   A A 5 G                       | Vin (Voltage In)    ->  3.3V/5V
+      O   N V 0 1 2 3   4 5 V N                       | Signal (v. divider) ->  A3
+      M   D                   D                       | Gnd (Ground)        ->  Gnd
 
 ------------------------------------------------------------------
 Functions
