@@ -1,6 +1,6 @@
-AAF2JB Release 1.0.0
+AAF2JB Release 1.0.6
 ======================
-This project is a derivative fromhttps://sourceforge.net/projects/arduinoascomfocuser/?source=navbar 
+This project is a derivative from AAF2 by @tekkydave (https://sourceforge.net/projects/arduinoascomfocuser/?source=navbar)
 
 It requires the Ascom platform 6.1 to be installed first from the Ascom website (http://ascom-standards.org/)
 
@@ -31,19 +31,14 @@ Note: If you have a previous version of AAF2 installed then uninstall it first b
    Under the section 'Automatic installation' there are clear instructions on how to install the library zip files via the Arduino IDE.
    Install the two libraries before trying to Compile & Upload the sketch to your Arduino device.
 
-See the Wiki section of this project for detailed build instructions.
-
-I have only tested the Ascom Driver on Windows 7 32-bit and 64-bit systems but it should work fine on any Windows version with the correct
-ASCOM Platform installed. If you have any comments or suggestions please feed them back via the SourceForge project pages.
-
 HARDWARE
 --------
 
 ------------------------                              | -----------------------------
 jD-IOBoard V1.0 pinouts                               | BME280 Sensor       ->  Board
 ------------------------                              | -----------------------------
-(IMPORTANT, NEWER JD_IOBoard REVISION CHANGED PINOUT) | Vin (Voltage In)    ->  3.3V/5V
-                                                      | Gnd (Ground)        ->  Gnd
+IMPORTANT: NEWER JD_IOBoard REVISION CHANGED PINOUT   | Vin (Voltage In)    ->  3.3V/5V
+           READ io-board_v1.1.pdf for more detail.    | Gnd (Ground)        ->  Gnd
             D D D G       R T R                       | SDA (Serial Data)   ->  A4
         5 5 1 1 1 N D D D X X S                       | SCK (Serial Clock)  ->  A5
         V V 3 1 2 D 7 6 5 1 1 T                       | 
